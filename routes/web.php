@@ -6,6 +6,7 @@ use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\PengeluaranController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\PemasukanController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -28,7 +29,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'grafik']);
 
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','ceklevel:Admin,Pegawai'])->group(function () {
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::put('/update', [ProfileController::class, 'update'])->name('update');
 
@@ -49,4 +50,11 @@ Route::put('/update-stock/{id}', [ProdukController::class, 'add_stock'])->name('
 Route::get('/pemasukan', [PemasukanController::class, 'index'])->name('pemasukan');
 Route::put('/store-pemasukan', [PemasukanController::class, 'store'])->name('store-pemasukan');
 Route::put('/delete-pemasukan/{id}', [PemasukanController::class, 'destroy'])->name('delete-pemasukan');
+});
+
+Route::middleware(['auth','ceklevel:Admin'])->group(function () {
+Route::get('/data-user', [UsersController::class, 'index'])->name('data-user');
+Route::put('/store-user', [UsersController::class, 'store'])->name('store-user');
+Route::put('/update-user/{id}', [UsersController::class, 'update'])->name('update-user');
+Route::put('/delete-user/{id}', [UsersController::class, 'destroy'])->name('delete-user');
 });

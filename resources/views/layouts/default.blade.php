@@ -55,6 +55,15 @@
                             <div class="sb-nav-link-icon"><i class="fa fa-cart-arrow-down text-dark"></i></div>
                             Pengeluaran
                         </a>
+
+                        @if (auth()->user()->level == "Admin")
+                        <div class="sb-sidenav-menu-heading text-dark">ADMIN MENU</div>
+                        <a class="nav-link text-dark" href="/data-user">
+                            <div class="sb-nav-link-icon"><i class="fas fa-users text-dark"></i></div>
+                            Data User
+                        </a>
+                        @endif
+
                         <div class="sb-sidenav-menu-heading text-dark">Personal</div>
                         <a class="nav-link text-dark" href="/profile">
                             <div class="sb-nav-link-icon"><i class="fas fa-user text-dark"></i></div>
