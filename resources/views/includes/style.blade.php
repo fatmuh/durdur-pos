@@ -1,3 +1,4 @@
+<link rel="icon" type="image/x-icon" href="{{ url('https://cdn-icons-png.flaticon.com/512/765/765534.png') }}">
 <link href="{{ url('https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css') }}" rel="stylesheet" />
 <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 <script src="{{ url('https://use.fontawesome.com/releases/v6.1.0/js/all.js') }}" crossorigin="anonymous"></script>

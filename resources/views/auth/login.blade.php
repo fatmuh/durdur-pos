@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Login - SB Admin</title>
+    <title>Sign In - DurDur PoS</title>
     <link href="css/styles.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{ url('https://cdn-icons-png.flaticon.com/512/765/765534.png') }}">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
